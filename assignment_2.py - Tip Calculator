@@ -1,0 +1,12 @@
+import streamlit as st
+
+st.title("Tip Calculator")
+
+bill = st.number_input("Enter bill amount:")
+tip_percent = st.slider("Tip %", 0, 100, 10)
+
+if bill:
+    tip = bill * tip_percent / 100
+    total = bill + tip
+    st.write(f"Tip: ${tip:.2f}")
+    st.write(f"Total: ${total:.2f}")
