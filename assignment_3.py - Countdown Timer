@@ -1,0 +1,12 @@
+import streamlit as st
+import time
+
+st.title("Countdown Timer")
+
+seconds = st.number_input("Enter countdown time in seconds:", min_value=1, step=1)
+
+if st.button("Start Countdown"):
+    for i in range(int(seconds), 0, -1):
+        st.write(f"{i} seconds left")
+        time.sleep(1)
+    st.write("Time's up!")
