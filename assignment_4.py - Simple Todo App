@@ -1,0 +1,14 @@
+import streamlit as st
+
+st.title("Todo List")
+
+if 'tasks' not in st.session_state:
+    st.session_state.tasks = []
+
+task = st.text_input("Add new task:")
+
+if st.button("Add Task"):
+    st.session_state.tasks.append(task)
+
+for t in st.session_state.tasks:
+    st.write("- " + t)
